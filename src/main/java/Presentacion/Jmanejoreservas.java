@@ -37,7 +37,7 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
         this.costoalojamiento = costoalojamiento;
     }
 
-    public void mostrarDatosSeleccionados() {
+    public void mostrarDatos() {
         txtidhabitacion.setText(cod);
         txtnumero.setText(numero);
         txtcostoalojamiento.setText(costoalojamiento);
@@ -489,7 +489,7 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
                     .addComponent(btneliminar)
                     .addComponent(btnsalir))
                 .addGap(25, 25, 25)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbltotalregistros)
@@ -667,7 +667,7 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Jpnreserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jlnuevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -688,6 +688,7 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addComponent(jlnuevo)
                 .addContainerGap())
         );
@@ -700,7 +701,7 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
     }//GEN-LAST:event_txtidreservaActionPerformed
 
     private void btnbuscahabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscahabitacionActionPerformed
-
+                    
         Jvistahabitacion form = new Jvistahabitacion();
         form.toFront();
         form.setVisible(true);

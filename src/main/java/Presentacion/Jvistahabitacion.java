@@ -19,7 +19,27 @@ public final class Jvistahabitacion extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
 
     }
+ public void obtenerDatosSeleccionados() {
+    int fila = tablalistado.getSelectedRow();
+    if (fila != -1) {
+        String cod = (String) tablalistado.getValueAt(fila, 0);
+        String numero = tablalistado.getValueAt(fila, 1).toString();
+        String costoalojamiento = tablalistado.getValueAt(fila, 5).toString();
+         pasarDatosAFormularioDestino(cod, numero, costoalojamiento);
+    }
+}
+  private void pasarDatosAFormularioDestino(String cod, String numero, String costoalojamiento) {
+        Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
+        Jmanejoreservas.mostrarDatos();
+        setVisible(true);
 
+      
+        Jingreso Jingreso = new Jingreso(cod, numero, costoalojamiento);
+        Jingreso.mostrarDatosSeleccionados();
+        setVisible(true);
+
+        // Agrega más formularios de destino según sea necesario
+    }
     void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
@@ -172,27 +192,26 @@ public final class Jvistahabitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void tablalistadoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMousePressed
-
+ 
+        
         if (evt.getClickCount() == 2) {
-            int fila = tablalistado.getSelectedRow();
-            String cod;
-            String numero;
-            String costoalojamiento;
-
-            cod = (String) tablalistado.getValueAt(fila, 0);
-            numero = tablalistado.getValueAt(fila, 1).toString();
-            costoalojamiento = tablalistado.getValueAt(fila, 5).toString();
-
-            Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
-           Jmanejoreservas.mostrarDatosSeleccionados();
+            obtenerDatosSeleccionados();
+                
+        }
+            
+           
+           
+         //   Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
+          // Jmanejoreservas.mostrarDatosSeleccionados();
 
             //this.dispose();
 
            /* Jingreso Jingreso = new Jingreso(cod, numero, costoalojamiento);
             Jingreso.mostrarDatos();*/
 
-            this.dispose();
-        }
+        
+        
+        
 
     }//GEN-LAST:event_tablalistadoMousePressed
 

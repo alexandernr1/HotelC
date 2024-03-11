@@ -178,6 +178,11 @@ public final class Jingreso extends javax.swing.JFrame {
         jLabel9.setText("Costo Alojameinto");
 
         txtidhabitacion.setText("IDH");
+        txtidhabitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtidhabitacionActionPerformed(evt);
+            }
+        });
 
         btnvistahabitacion.setText("jButton3");
         btnvistahabitacion.addActionListener(new java.awt.event.ActionListener() {
@@ -751,6 +756,10 @@ public final class Jingreso extends javax.swing.JFrame {
         txtpersonas.setText(tablalistado.getValueAt(fila, 11).toString());
         txtmotivo_viaje.setText(tablalistado.getValueAt(fila, 12).toString());
     }//GEN-LAST:event_tablalistadoMouseClicked
+
+    private void txtidhabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidhabitacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidhabitacionActionPerformed
 
     /**
      * @param args the command line arguments

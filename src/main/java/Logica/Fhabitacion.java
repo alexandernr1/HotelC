@@ -250,7 +250,7 @@ public String obtenerEstadoHabitacion(int idhabitacion) {
 
         return estados;
     }
-  
+ 
 }
 
 
