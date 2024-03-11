@@ -1,0 +1,4 @@
+git status
+git add .
+git commit -m "se agrega el mensaje en el main"
+git push -u origin main

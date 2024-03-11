@@ -2,34 +2,33 @@ package Presentacion;
 
 import Datos.Dlimpieza;
 import javax.swing.JFrame;
-import Datos.Tiempopro;
+//import Datos.Tiempopro;
 import Logica.Flimpieza;
 import java.awt.HeadlessException;
 import java.sql.Date;
-import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 public class Jlimpieza extends javax.swing.JFrame {
 
-    Tiempopro time = new Tiempopro();
+   // Tiempopro time = new Tiempopro();
 
     public Jlimpieza() {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("LIMPIEZA");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mostrarTiempo();
+       // mostrarTiempo();
         inhabilitar();
     }
     private String accion = "guardar";
     public static int idusuario;
 
-    private void mostrarTiempo() {
+    /*private void mostrarTiempo() {
 
-        jbfecha.setText(time.fechacomp);
+//        jbfecha.setText(time.fechacomp);
 
-    }
+    }*/
 
     static void inhabilitar() {
         txtidempleado.setVisible(false);
@@ -53,7 +52,6 @@ public class Jlimpieza extends javax.swing.JFrame {
         txtidlimpieza = new javax.swing.JTextField();
         txtempleado = new javax.swing.JTextField();
         cboestado = new javax.swing.JComboBox<>();
-        jbfecha = new javax.swing.JLabel();
         jtidempleado = new javax.swing.JTextField();
         butnuevo = new javax.swing.JButton();
         butguardar = new javax.swing.JButton();
@@ -86,9 +84,7 @@ public class Jlimpieza extends javax.swing.JFrame {
 
         txtidlimpieza.setText("IDL");
 
-        cboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Limpieza 1", "Item 2", "Item 3", "Item 4" }));
-
-        jbfecha.setText("jlebel");
+        cboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Limpieza", "Item 2", "Item 3", "Item 4" }));
 
         jtidempleado.setText("IDE");
 
@@ -201,9 +197,7 @@ public class Jlimpieza extends javax.swing.JFrame {
                         .addComponent(txtidlimpieza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(149, 149, 149)
                         .addComponent(dcfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -211,11 +205,11 @@ public class Jlimpieza extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtidlimpieza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jbfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dcfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcfecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtidlimpieza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -281,18 +275,15 @@ public class Jlimpieza extends javax.swing.JFrame {
 
         Dlimpieza dts = new Dlimpieza();
         Flimpieza func = new Flimpieza();
-
+        dts.setIdempleado(idusuario);
         // Asignar valores a los campos de Dlimpieza
         dts.setNumero(Integer.parseInt(cbonumero.getSelectedItem().toString()));
         dts.setTipo_habitacion(cbotipo_habitacion.getSelectedItem().toString());
+
+        Date fechaSeleccionada = new java.sql.Date(dcfecha.getDate().getTime());
+        dts.setFecha(fechaSeleccionada);
+        
         dts.setEstado(cboestado.getSelectedItem().toString());
-        Calendar cal;
-        int d, m, a;
-        cal = dcfecha.getCalendar();
-        d = cal.get(Calendar.DAY_OF_MONTH);
-        m = cal.get(Calendar.MONTH);
-        a = cal.get(Calendar.YEAR) - 1900;
-        dts.setFecha(new Date(a, m, d));
         dts.setTurno(cboturno.getSelectedItem().toString());
 
         // Insertar datos
@@ -394,7 +385,6 @@ public class Jlimpieza extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     public static javax.swing.JPanel jPanel1;
-    public static javax.swing.JLabel jbfecha;
     public static javax.swing.JTextField jtempleado;
     public static javax.swing.JTextField jtidempleado;
     public static javax.swing.JTextField txtempleado;
@@ -402,7 +392,4 @@ public class Jlimpieza extends javax.swing.JFrame {
     public static javax.swing.JTextField txtidlimpieza;
     // End of variables declaration//GEN-END:variables
 
-    JTable getTablaListado() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

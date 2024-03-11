@@ -14,7 +14,7 @@ public class Flimpieza {
     private final Cconexion mysql = new Cconexion();
     private final Connection cn = mysql.establecerConexion();
     private String sSQL = "";
-    private String sSQL2 = "";
+ 
 
     /* public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
@@ -58,7 +58,7 @@ public class Flimpieza {
 
     }*/
     public boolean insertar(Dlimpieza dts) {
-        sSQL = "insert into limpieza (idempleado,numero,fecha,tipo_habitacion,estado,turno)"
+        sSQL = "INSERT INTO limpieza (idempleado,numero,fecha,tipo_habitacion,estado,turno)"
                 + "values (?,?,?,?,?,?)";
         try {
 
@@ -70,6 +70,8 @@ public class Flimpieza {
             pst.setDate(4, dts.getFecha());
             pst.setString(5, dts.getEstado());
             pst.setString(6, dts.getTurno());
+            
+            
             int n = pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "DATOS ALMACENADOS CORRECTAMENTE");
             return n != 0;
