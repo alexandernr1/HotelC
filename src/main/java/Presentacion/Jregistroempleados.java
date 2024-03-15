@@ -1,4 +1,3 @@
-
 package Presentacion;
 
 import Datos.Dempleado;
@@ -28,7 +27,7 @@ public final class Jregistroempleados extends javax.swing.JFrame {
     void inhabilitar() {
 
         txtidpersona.setVisible(false);
-       /* txtnombres.setEnabled(false);
+        /* txtnombres.setEnabled(false);
         txtapellidos.setEnabled(false);
         comtipodocumento.setEnabled(false);
         txtnumdocumento.setEnabled(false);
@@ -48,7 +47,7 @@ public final class Jregistroempleados extends javax.swing.JFrame {
         btncancelar.setEnabled(false);
         btneliminar.setEnabled(false);
         cboestado.setEnabled(false);*/
-       
+
         txtidpersona.setText("");
         txtnombres.setText("");
         txtapellidos.setText("");
@@ -60,7 +59,7 @@ public final class Jregistroempleados extends javax.swing.JFrame {
         txtciudad.setText("");
         txtlogin.setText("");
         txtpassword.setText("");
-        
+
         txteps.setText("");
         txtarl.setText("");
 
@@ -497,7 +496,7 @@ public final class Jregistroempleados extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -826,8 +825,8 @@ public final class Jregistroempleados extends javax.swing.JFrame {
         txtapellidos.setText(tablalistado.getValueAt(fila, 2).toString());
         comtipodocumento.setSelectedItem(tablalistado.getValueAt(fila, 3).toString());
         txtnumdocumento.setText(tablalistado.getValueAt(fila, 4).toString());
-        txtdireccion.setText(tablalistado.getValueAt(fila, 5).toString());
-        txttelefono.setText(tablalistado.getValueAt(fila, 6).toString());
+        txttelefono.setText(tablalistado.getValueAt(fila, 5).toString());
+        txtdireccion.setText(tablalistado.getValueAt(fila, 6).toString());
         txtemail.setText(tablalistado.getValueAt(fila, 7).toString());
         txtpais.setText(tablalistado.getValueAt(fila, 8).toString());
         txtciudad.setText(tablalistado.getValueAt(fila, 9).toString());

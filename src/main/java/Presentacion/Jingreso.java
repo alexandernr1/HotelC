@@ -23,8 +23,6 @@ public final class Jingreso extends javax.swing.JFrame {
         setTitle("INGRESO DE HUESPED");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         inhabilitar();
-     
-    
 
     }
     private String accion = "guardar";
@@ -98,7 +96,7 @@ public final class Jingreso extends javax.swing.JFrame {
         btningresar = new javax.swing.JButton();
         btnabonos = new javax.swing.JButton();
         txtidingreso = new javax.swing.JTextField();
-        jdfchaingreso = new com.toedter.calendar.JDateChooser();
+        jdfechaingreso = new com.toedter.calendar.JDateChooser();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -235,7 +233,6 @@ public final class Jingreso extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtmotivo_viaje, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -261,7 +258,8 @@ public final class Jingreso extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbotipo, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(cbotipo, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtmotivo_viaje, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(160, 160, 160))
         );
@@ -330,7 +328,7 @@ public final class Jingreso extends javax.swing.JFrame {
         jLayeredPane1.setLayer(btningresar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(btnabonos, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(txtidingreso, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jdfchaingreso, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jdfechaingreso, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -351,11 +349,11 @@ public final class Jingreso extends javax.swing.JFrame {
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jdfchaingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jdfechaingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtidingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
@@ -372,7 +370,7 @@ public final class Jingreso extends javax.swing.JFrame {
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jdfchaingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jdfechaingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
                                 .addComponent(txtpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -627,7 +625,7 @@ public final class Jingreso extends javax.swing.JFrame {
 
         // int seleccionado = comtiporeserva.getSelectedIndex();
         //  dts.setTiporeserva((String) comtiporeserva.getItemAt(seleccionado));
-        /* Calendar cal;
+         Calendar cal;
         int d, m, a;
 
       cal = jdfechaingreso.getCalendar();
@@ -640,7 +638,7 @@ public final class Jingreso extends javax.swing.JFrame {
 
         } catch (Exception e) {
         }
-         */
+         
         dts.setCostoalojamiento(Double.valueOf(txtcostoalojamiento.getText()));
 
         // seleccionado = cbotipo.getSelectedIndex();
@@ -669,7 +667,9 @@ public final class Jingreso extends javax.swing.JFrame {
     }//GEN-LAST:event_btningresarActionPerformed
 
     private void btnvistaclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvistaclienteActionPerformed
-        // TODO add your handling code here:
+        Jvistacliente form = new Jvistacliente();
+        form.toFront();
+        form.setVisible(true);          // TODO add your handling code here:
     }//GEN-LAST:event_btnvistaclienteActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -746,7 +746,7 @@ public final class Jingreso extends javax.swing.JFrame {
         txttelefono.setText(tablalistado.getValueAt(fila, 5).toString());
         txtidempleado.setText(tablalistado.getValueAt(fila, 6).toString());
         txtempleado.setText(tablalistado.getValueAt(fila, 7).toString());
-        //jdfechaingreso.setDate(Date.valueOf(tablalistado.getValueAt(fila, 8).toString()));
+        jdfechaingreso.setDate(Date.valueOf(tablalistado.getValueAt(fila, 8).toString()));
         txtcostoalojamiento.setText(tablalistado.getValueAt(fila, 9).toString());
         cbotipo.setSelectedItem(tablalistado.getValueAt(fila, 10).toString());
         txtpersonas.setText(tablalistado.getValueAt(fila, 11).toString());
@@ -821,12 +821,12 @@ public final class Jingreso extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane3;
-    private com.toedter.calendar.JDateChooser jdfchaingreso;
+    private com.toedter.calendar.JDateChooser jdfechaingreso;
     private javax.swing.JLabel lbltotalregistro;
     private javax.swing.JLabel lbltotalregistros;
     private javax.swing.JTable tablalistado;
     private javax.swing.JTextField txtbuscar;
-    private javax.swing.JTextField txtcliente;
+    public static javax.swing.JTextField txtcliente;
     public static javax.swing.JTextField txtcostoalojamiento;
     public static javax.swing.JTextField txtempleado;
     public static javax.swing.JTextField txtidcliente;
@@ -836,7 +836,7 @@ public final class Jingreso extends javax.swing.JFrame {
     private javax.swing.JTextField txtmotivo_viaje;
     public static javax.swing.JTextField txtnumero;
     private javax.swing.JTextField txtpersonas;
-    private javax.swing.JTextField txttelefono;
+    public static javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 
 }

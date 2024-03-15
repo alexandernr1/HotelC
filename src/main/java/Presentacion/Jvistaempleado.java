@@ -233,8 +233,8 @@ public final class Jvistaempleado extends javax.swing.JFrame {
             cod = tablalistado.getValueAt(fila, 0).toString();
             valor = tablalistado.getValueAt(fila, 1).toString()+ " " + tablalistado.getValueAt(fila, 2).toString();
             
-            Jlimpieza.jtidempleado.setText(cod);
-            Jlimpieza.jtempleado.setText(valor);
+            Jlimpieza.txtidempleado.setText(cod);
+            Jlimpieza.empleado.setText(valor);
           
 
             this.dispose();

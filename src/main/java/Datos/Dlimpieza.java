@@ -7,21 +7,21 @@ import java.sql.Date;
 public class Dlimpieza {
 public int idlimpieza;
 public int idempleado;
-public Date fecha;
 public int numero;
 public String tipo_habitacion;
+public Date fecha;
 public String estado;
 public String turno;
 
     public Dlimpieza() {
     }
 
-    public Dlimpieza(int idlimpieza, int idempleado, Date fecha, int numero, String tipo_habitacion, String estado, String turno) {
+    public Dlimpieza(int idlimpieza, int idempleado, int numero, String tipo_habitacion, Date fecha, String estado, String turno) {
         this.idlimpieza = idlimpieza;
         this.idempleado = idempleado;
-        this.fecha = fecha;
         this.numero = numero;
         this.tipo_habitacion = tipo_habitacion;
+        this.fecha = fecha;
         this.estado = estado;
         this.turno = turno;
     }
@@ -42,14 +42,6 @@ public String turno;
         this.idempleado = idempleado;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
     public int getNumero() {
         return numero;
     }
@@ -64,6 +56,14 @@ public String turno;
 
     public void setTipo_habitacion(String tipo_habitacion) {
         this.tipo_habitacion = tipo_habitacion;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public String getEstado() {

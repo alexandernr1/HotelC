@@ -66,11 +66,11 @@ public final class Jvistacliente extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombres", "Apellidos", "Documento", "Numero ", "Direccion", "Telefono", "Email", "Pais", "Ciudad", "Codigo"
+                "Nombres", "Apellidos", "Documento", "Numero ", "Telefono", "Direccion", "Email", "Pais", "Ciudad", "Codigo"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -186,13 +186,16 @@ public final class Jvistacliente extends javax.swing.JFrame {
         if (evt.getClickCount() == 2) {
             int fila = tablalistado.getSelectedRow();
             String cod;
-            String valor; //apellidos, tipodocumento, direccion, telefono, email;
+            String valor; //apellidos, tipodocumento, direccion,, email; 
+            String telefono;
             //int numerodocumento;
             cod = tablalistado.getValueAt(fila, 0).toString();
             valor = tablalistado.getValueAt(fila, 1).toString()+ " " + tablalistado.getValueAt(fila, 2).toString();
+            telefono = tablalistado.getValueAt(fila, 6).toString();
             
-            Jmanejoreservas.txtidcliente.setText(cod);
-            Jmanejoreservas.txtcliente.setText(valor);
+            Jingreso.txtidcliente.setText(cod);
+            Jingreso.txtcliente.setText(valor);
+            Jingreso.txttelefono.setText(telefono);
            /* apellidos = tablalistado.getValueAt(fila, 2).toString();
             tipodocumento = tablalistado.getValueAt(fila, 3).toString();
             numerodocumento = tablalistado.getValueAt(fila, 4).hashCode();

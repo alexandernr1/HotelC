@@ -344,9 +344,7 @@ public final class Jmenuhotel extends javax.swing.JFrame {
          Jlimpieza form = new Jlimpieza();
         form.toFront();
         form.setVisible(true);
-        Jlimpieza.txtidempleado.setText(lblidpersona.getText());
-        Jlimpieza.txtempleado.setText(lblnombres.getText() + " " + lblapellidos.getText());
-        Jlimpieza.idusuario = Integer.parseInt(lblidpersona.getText());
+       
     }//GEN-LAST:event_btnlimpiezaActionPerformed
 
     /**

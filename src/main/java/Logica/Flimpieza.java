@@ -3,11 +3,8 @@ package Logica;
 import Datos.Dlimpieza;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 public class Flimpieza {
 
@@ -15,7 +12,50 @@ public class Flimpieza {
     private final Connection cn = mysql.establecerConexion();
     private String sSQL = "";
  
+/* public boolean insertar(Dlimpieza dts) {
+        sSQL = "INSERT INTO limpieza (idempleado,numero,fecha,tipo_habitacion,estado,turno)"
+                + "values (?,?,?,?,?,?)";
+        try {
 
+            PreparedStatement pst = cn.prepareStatement(sSQL);
+
+            pst.setInt(1, dts.getIdempleado());
+            pst.setInt(2, dts.getNumero());
+            pst.setString(3, dts.getTipo_habitacion());
+            pst.setDate(4, dts.getFecha());
+            pst.setString(5, dts.getEstado());
+            pst.setString(6, dts.getTurno());
+            
+            
+            int n = pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "DATOS ALMACENADOS CORRECTAMENTE");
+            return n != 0;
+
+        } catch (SQLException e) {
+            JOptionPane.showConfirmDialog(null, e);
+            return false;
+        }
+    }*/
+ public boolean insertar(Dlimpieza dts){
+     sSQL = "insert into limpieza(idempleado, numero, fecha, tipo_habitacion, estado,turno)"+"values (?,?,?,?,?,?)";
+     try {
+         PreparedStatement pst = cn.prepareStatement(sSQL);
+         pst.setInt(1, dts.getIdempleado());
+         pst.setInt(2,dts.getNumero());
+         pst.setString(3, dts.getTipo_habitacion());
+         pst.setDate(4, dts.getFecha());
+         pst.setString(5, dts.getEstado());
+          pst.setString(6, dts.getTurno());
+          
+          int n = pst.executeUpdate();
+          JOptionPane.showMessageDialog(null, "DATOS ALMACENADOS CORRECTAMENTE");
+            return n != 0;
+         
+     } catch (Exception e) {
+         JOptionPane.showConfirmDialog(null, e);
+            return false;
+     }
+ }
     /* public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
@@ -57,30 +97,7 @@ public class Flimpieza {
         }
 
     }*/
-    public boolean insertar(Dlimpieza dts) {
-        sSQL = "INSERT INTO limpieza (idempleado,numero,fecha,tipo_habitacion,estado,turno)"
-                + "values (?,?,?,?,?,?)";
-        try {
-
-            PreparedStatement pst = cn.prepareStatement(sSQL);
-
-            pst.setInt(1, dts.getIdempleado());
-            pst.setInt(2, dts.getNumero());
-            pst.setString(3, dts.getTipo_habitacion());
-            pst.setDate(4, dts.getFecha());
-            pst.setString(5, dts.getEstado());
-            pst.setString(6, dts.getTurno());
-            
-            
-            int n = pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "DATOS ALMACENADOS CORRECTAMENTE");
-            return n != 0;
-
-        } catch (SQLException e) {
-            JOptionPane.showConfirmDialog(null, e);
-            return false;
-        }
-    }
+   
 
     /* public boolean eliminar(Dlimpieza dts) {
         sSQL = "delete from reserva where idreserva=?";

@@ -29,14 +29,15 @@ public final class Jvistahabitacion extends javax.swing.JFrame {
     }
 }
   private void pasarDatosAFormularioDestino(String cod, String numero, String costoalojamiento) {
-        Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
+       /* Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
         Jmanejoreservas.mostrarDatos();
-        setVisible(true);
+        setVisible(true);*/
 
       
         Jingreso Jingreso = new Jingreso(cod, numero, costoalojamiento);
         Jingreso.mostrarDatosSeleccionados();
         setVisible(true);
+          this.dispose();
 
         // Agrega más formularios de destino según sea necesario
     }
@@ -204,7 +205,7 @@ public final class Jvistahabitacion extends javax.swing.JFrame {
          //   Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
           // Jmanejoreservas.mostrarDatosSeleccionados();
 
-            //this.dispose();
+          
 
            /* Jingreso Jingreso = new Jingreso(cod, numero, costoalojamiento);
             Jingreso.mostrarDatos();*/

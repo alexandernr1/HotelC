@@ -8,6 +8,7 @@ Presentacion\Jmenuhotel$11.class
 Datos\Dingreso.class
 Presentacion\Jcliente$17.class
 Presentacion\Jmenuprin$3.class
+Presentacion\Jpago$9.class
 Presentacion\Jvistahabitacion.class
 Presentacion\Jpago$3.class
 Datos\Dempleado.class
@@ -51,6 +52,7 @@ Datos\Dconsumo.class
 Presentacion\Jingreso$5.class
 Presentacion\Jmanejoreservas$4.class
 Presentacion\Jhabitaciones$3.class
+Presentacion\Jpago$10.class
 Presentacion\Jingreso$2.class
 Presentacion\Jcliente$20.class
 Presentacion\Jmanejoreservas$18.class
@@ -70,6 +72,7 @@ Presentacion\Jcliente$16.class
 Presentacion\Jvistahabitacion$1.class
 Presentacion\Jhabitaciones$12.class
 Presentacion\Jregistroempleados$5.class
+Presentacion\Jpago$12.class
 Presentacion\Jmenuprin$5.class
 Presentacion\Jmanejoreservas$2.class
 Presentacion\Jpago$7.class
@@ -98,8 +101,8 @@ Presentacion\Jmenuhotel$10.class
 Presentacion\Jmenuprin$4.class
 Datos\Dpersona.class
 Presentacion\Jingreso$4.class
+Presentacion\Jpago$8.class
 Logica\Cconexion.class
-Presentacion\Jmanejoreservas$19.class
 Presentacion\Jcliente$5.class
 Presentacion\Jingreso$13.class
 Presentacion\Jlimpieza$5.class
@@ -112,6 +115,7 @@ Logica\Fpago.class
 Presentacion\Jhabitaciones$7.class
 Presentacion\Jmenuprin$6.class
 Presentacion\Jingreso$6.class
+Presentacion\Jpago$11.class
 Presentacion\Jregistroempleados$13.class
 Presentacion\Jcliente$21.class
 Presentacion\Jsalidahuesped$4.class

@@ -429,9 +429,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="btnverconsumo" pref="102" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
                               <Component id="btnrealizarpagos" min="-2" pref="135" max="-2" attributes="0"/>
                               <EmptySpace pref="92" max="32767" attributes="0"/>
                               <Component id="lbltotalregistros" min="-2" pref="109" max="-2" attributes="0"/>
@@ -471,7 +469,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lbltotalregistros" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnrealizarpagos" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnverconsumo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -633,14 +630,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="btnverconsumo">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Consumos"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnverconsumoActionPerformed"/>
-              </Events>
-            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JButton" name="btnnuevo">

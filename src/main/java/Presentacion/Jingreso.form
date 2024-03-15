@@ -77,11 +77,11 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jdfchaingreso" min="-2" pref="111" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jdfechaingreso" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtpersonas" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtpersonas" min="-2" pref="79" max="-2" attributes="0"/>
                               </Group>
                               <Component id="txtidingreso" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
@@ -105,7 +105,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jdfchaingreso" min="-2" max="-2" attributes="0"/>
+                              <Component id="jdfechaingreso" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtpersonas" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -158,7 +158,6 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtmotivo_viaje" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -188,6 +187,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="cbotipo" min="-2" pref="131" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="txtmotivo_viaje" alignment="0" min="-2" pref="233" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -277,6 +277,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtcliente">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
@@ -287,6 +290,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txttelefonoActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
@@ -462,7 +468,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="com.toedter.calendar.JDateChooser" name="jdfchaingreso">
+        <Component class="com.toedter.calendar.JDateChooser" name="jdfechaingreso">
         </Component>
       </SubComponents>
     </Container>
