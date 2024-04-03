@@ -1,6 +1,7 @@
 package Logica;
 
 import Datos.Dlimpieza;
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -11,51 +12,28 @@ public class Flimpieza {
     private final Cconexion mysql = new Cconexion();
     private final Connection cn = mysql.establecerConexion();
     private String sSQL = "";
- 
-/* public boolean insertar(Dlimpieza dts) {
-        sSQL = "INSERT INTO limpieza (idempleado,numero,fecha,tipo_habitacion,estado,turno)"
-                + "values (?,?,?,?,?,?)";
+
+   
+    public boolean insertar(Dlimpieza dts) {
+        sSQL = "insert into limpieza(idempleado, numero,  tipo_habitacion, fecha, estado, turno)" + "values (?,?,?,?,?,?)";
         try {
-
             PreparedStatement pst = cn.prepareStatement(sSQL);
-
             pst.setInt(1, dts.getIdempleado());
             pst.setInt(2, dts.getNumero());
             pst.setString(3, dts.getTipo_habitacion());
             pst.setDate(4, dts.getFecha());
             pst.setString(5, dts.getEstado());
             pst.setString(6, dts.getTurno());
-            
-            
+
             int n = pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "DATOS ALMACENADOS CORRECTAMENTE");
+           // JOptionPane.showMessageDialog(null, "DATOS ALMACENADOS CORRECTAMENTE");
             return n != 0;
 
-        } catch (SQLException e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
-    }*/
- public boolean insertar(Dlimpieza dts){
-     sSQL = "insert into limpieza(idempleado, numero, fecha, tipo_habitacion, estado,turno)"+"values (?,?,?,?,?,?)";
-     try {
-         PreparedStatement pst = cn.prepareStatement(sSQL);
-         pst.setInt(1, dts.getIdempleado());
-         pst.setInt(2,dts.getNumero());
-         pst.setString(3, dts.getTipo_habitacion());
-         pst.setDate(4, dts.getFecha());
-         pst.setString(5, dts.getEstado());
-          pst.setString(6, dts.getTurno());
-          
-          int n = pst.executeUpdate();
-          JOptionPane.showMessageDialog(null, "DATOS ALMACENADOS CORRECTAMENTE");
-            return n != 0;
-         
-     } catch (Exception e) {
-         JOptionPane.showConfirmDialog(null, e);
-            return false;
-     }
- }
+    }
     /* public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
@@ -97,9 +75,9 @@ public class Flimpieza {
         }
 
     }*/
-   
 
-    /* public boolean eliminar(Dlimpieza dts) {
+
+ /* public boolean eliminar(Dlimpieza dts) {
         sSQL = "delete from reserva where idreserva=?";
 
         try {

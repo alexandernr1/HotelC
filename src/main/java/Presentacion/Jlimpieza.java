@@ -80,6 +80,11 @@ public class Jlimpieza extends javax.swing.JFrame {
         cboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Limpieza", "Item 2", "Item 3", "Item 4" }));
 
         txtidempleado.setText("IDE");
+        txtidempleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtidempleadoActionPerformed(evt);
+            }
+        });
 
         butnuevo.setBackground(new java.awt.Color(153, 153, 153));
         butnuevo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\COMBUGAS\\Complementos\\Images\\nuevo.GIF")); // NOI18N
@@ -108,6 +113,12 @@ public class Jlimpieza extends javax.swing.JFrame {
         butsalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butsalirActionPerformed(evt);
+            }
+        });
+
+        empleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empleadoActionPerformed(evt);
             }
         });
 
@@ -315,6 +326,14 @@ public class Jlimpieza extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbonumeroActionPerformed
 
+    private void empleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_empleadoActionPerformed
+
+    private void txtidempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidempleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidempleadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -343,10 +362,8 @@ public class Jlimpieza extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Jlimpieza().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Jlimpieza().setVisible(true);
         });
     }
 

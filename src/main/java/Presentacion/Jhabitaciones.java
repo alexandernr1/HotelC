@@ -223,17 +223,20 @@ public class Jhabitaciones extends javax.swing.JFrame {
                     .addComponent(btnsalir)
                     .addComponent(btnReporte))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
                 .addGap(9, 9, 9)
                 .addComponent(lbltotalregistros))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "REGISTRO DE HABITACIONES"));
 
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel2.setText("Número:");
 
+        jLabel3.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel3.setText("Piso:");
 
+        compiso.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         compiso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8" }));
         compiso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,20 +244,26 @@ public class Jhabitaciones extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel4.setText("Descripcion");
 
+        jLabel5.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel5.setText("Características:");
 
+        jLabel6.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel6.setText("Precio:");
 
+        txtprecio.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         txtprecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtprecioActionPerformed(evt);
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel7.setText("Estado:");
 
+        comestado.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         comestado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disponible", "Ocupado", "Reserva", "Mantenimiento" }));
         comestado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,8 +271,10 @@ public class Jhabitaciones extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel8.setText("Tipo Habitación:");
 
+        comtipohabitacion.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         comtipohabitacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Individual", "Doble", "Triple" }));
         comtipohabitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,10 +304,13 @@ public class Jhabitaciones extends javax.swing.JFrame {
         btncancelar.setForeground(new java.awt.Color(255, 255, 255));
         btncancelar.setText("Cancelar");
 
+        comcaracteristicas.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         comcaracteristicas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sencilla", "Doble", "Sencillas", "Doble Sencilla", " " }));
 
+        comdescripcion.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         comdescripcion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Cama", "2 Camas", "2 Camas doble - sencilla", "3 Camas", "1 Cama king" }));
 
+        comnumero.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         comnumero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "21", "22", "23", "24", "25", "26", "27", "28", "29", "210", "211", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "310", "311", "312", " " }));
         comnumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

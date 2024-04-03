@@ -1,14 +1,13 @@
-
 package Datos;
 
 import java.sql.Date;
 
-public class Dpago { 
+public class Dpago {
+
     private int idpago;
-    private int idreserva;
+    private int idingreso;
     private String tipocomprobante;
     private String numcomprobante;
-    private Double igv;
     private Double totalpago;
     private Date fechaemision;
     private Date fechapago;
@@ -17,12 +16,11 @@ public class Dpago {
     public Dpago() {
     }
 
-    public Dpago(int idpago, int idreserva, String tipocomprobante, String numcomprobante, Double igv, Double totalpago, Date fechaemision, Date fechapago, String formapago) {
+    public Dpago(int idpago, int idingreso, String tipocomprobante, String numcomprobante, Double totalpago, Date fechaemision, Date fechapago, String formapago) {
         this.idpago = idpago;
-        this.idreserva = idreserva;
+        this.idingreso = idingreso;
         this.tipocomprobante = tipocomprobante;
         this.numcomprobante = numcomprobante;
-        this.igv = igv;
         this.totalpago = totalpago;
         this.fechaemision = fechaemision;
         this.fechapago = fechapago;
@@ -37,12 +35,12 @@ public class Dpago {
         this.idpago = idpago;
     }
 
-    public int getIdreserva() {
-        return idreserva;
+    public int getIdingreso() {
+        return idingreso;
     }
 
-    public void setIdreserva(int idreserva) {
-        this.idreserva = idreserva;
+    public void setIdingreso(int idingreso) {
+        this.idingreso = idingreso;
     }
 
     public String getTipocomprobante() {
@@ -59,14 +57,6 @@ public class Dpago {
 
     public void setNumcomprobante(String numcomprobante) {
         this.numcomprobante = numcomprobante;
-    }
-
-    public Double getIgv() {
-        return igv;
-    }
-
-    public void setIgv(Double igv) {
-        this.igv = igv;
     }
 
     public Double getTotalpago() {
@@ -102,5 +92,4 @@ public class Dpago {
     }
     
 
-   
 }

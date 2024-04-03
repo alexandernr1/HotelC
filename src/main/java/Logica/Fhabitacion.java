@@ -175,7 +175,7 @@ public class Fhabitacion {
        sSQL="update habitacion set estado='Ocupado'"+
                " where idhabitacion=?";
            //alt + 39
-       
+        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
           

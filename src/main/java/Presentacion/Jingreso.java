@@ -18,7 +18,7 @@ public final class Jingreso extends javax.swing.JFrame {
 
     public Jingreso() {
         initComponents();
-
+        mostrar("");
         setLocationRelativeTo(null);
         setTitle("INGRESO DE HUESPED");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,6 +26,7 @@ public final class Jingreso extends javax.swing.JFrame {
 
     }
     private String accion = "guardar";
+    public static int idusuario;
 
     public Jingreso(String cod, String numero, String costoalojamiento) {
         this.cod = cod;
@@ -39,7 +40,21 @@ public final class Jingreso extends javax.swing.JFrame {
         txtnumero.setText(numero);
         txtcostoalojamiento.setText(costoalojamiento);
     }
-    public static int idusuario;
+
+    void ocultar_columnas() {
+        tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
+
+        tablalistado.getColumnModel().getColumn(1).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(1).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(1).setPreferredWidth(0);
+
+        tablalistado.getColumnModel().getColumn(3).setMaxWidth(0);
+        tablalistado.getColumnModel().getColumn(3).setMinWidth(0);
+        tablalistado.getColumnModel().getColumn(3).setPreferredWidth(0);
+
+    }
 
     static void inhabilitar() {
         txtidempleado.setVisible(false);
@@ -55,7 +70,7 @@ public final class Jingreso extends javax.swing.JFrame {
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
-            // ocultar_columnas();
+            ocultar_columnas();
             lbltotalregistro.setText("Total Registros " + Integer.toString(func.totalregistros));
 
         } catch (Exception e) {
@@ -70,7 +85,7 @@ public final class Jingreso extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtpersonas = new javax.swing.JTextField();
+        txtnum_personas = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         txtmotivo_viaje = new javax.swing.JTextField();
@@ -83,7 +98,7 @@ public final class Jingreso extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txttelefono = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        cbotipo = new javax.swing.JComboBox<>();
+        cbotipo_cliente = new javax.swing.JComboBox<>();
         btnvistacliente = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -92,6 +107,8 @@ public final class Jingreso extends javax.swing.JFrame {
         txtcostoalojamiento = new javax.swing.JTextField();
         txtidhabitacion = new javax.swing.JTextField();
         btnvistahabitacion = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        comestado = new javax.swing.JComboBox<>();
         btnsalida = new javax.swing.JButton();
         btningresar = new javax.swing.JButton();
         btnabonos = new javax.swing.JButton();
@@ -116,45 +133,60 @@ public final class Jingreso extends javax.swing.JFrame {
         jLayeredPane1.setBackground(new java.awt.Color(204, 204, 204));
         jLayeredPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("INGRESO HUESPED"));
 
-        jLabel2.setText("Numero Personas");
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel2.setText("Numero Personas:");
 
-        jLabel8.setText("Fecha de ingreso");
+        jLabel8.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel8.setText("Fecha de ingreso:");
 
-        txtpersonas.addActionListener(new java.awt.event.ActionListener() {
+        txtnum_personas.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        txtnum_personas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtpersonasActionPerformed(evt);
+                txtnum_personasActionPerformed(evt);
             }
         });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("CLIENTE"));
 
-        jLabel13.setText("Principal motivo del viaje");
+        jLabel13.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel13.setText("Principal motivo del viaje:");
 
+        txtmotivo_viaje.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         txtmotivo_viaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtmotivo_viajeActionPerformed(evt);
             }
         });
 
-        jLabel14.setText("Responsable");
+        jLabel14.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel14.setText("Responsable:");
 
         txtidempleado.setText("IDEM");
 
         txtidcliente.setText("IDC");
 
-        jLabel3.setText("Cliente");
+        txtempleado.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
 
-        jLabel4.setText("Telefono");
+        jLabel3.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel3.setText("Cliente:");
 
+        txtcliente.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel4.setText("Telefono:");
+
+        txttelefono.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         txttelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txttelefonoActionPerformed(evt);
             }
         });
 
-        jLabel18.setText("Tipo de cliente");
+        jLabel18.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel18.setText("Tipo de cliente:");
 
-        cbotipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrativo ", "General" }));
+        cbotipo_cliente.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        cbotipo_cliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "General" }));
 
         btnvistacliente.setText("jButton3");
         btnvistacliente.addActionListener(new java.awt.event.ActionListener() {
@@ -165,15 +197,20 @@ public final class Jingreso extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "HABITACIÓN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        jLabel7.setText("N° Habitación");
+        jLabel7.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel7.setText("N° Habitación:");
 
+        txtnumero.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         txtnumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnumeroActionPerformed(evt);
             }
         });
 
-        jLabel9.setText("Costo Alojameinto");
+        jLabel9.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel9.setText("Costo Alojameinto:");
+
+        txtcostoalojamiento.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
 
         txtidhabitacion.setText("IDH");
         txtidhabitacion.addActionListener(new java.awt.event.ActionListener() {
@@ -226,6 +263,12 @@ public final class Jingreso extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        jLabel11.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        jLabel11.setText("Estado:");
+
+        comestado.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        comestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " pagada", "Anulada", " " }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -234,15 +277,8 @@ public final class Jingreso extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtidempleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -258,9 +294,24 @@ public final class Jingreso extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbotipo, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtmotivo_viaje, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cbotipo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(comestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel13)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtmotivo_viaje, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel14)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtidempleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(160, 160, 160))
         );
         jPanel1Layout.setVerticalGroup(
@@ -280,12 +331,19 @@ public final class Jingreso extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
-                    .addComponent(cbotipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbotipo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtmotivo_viaje, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(comestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(45, 45, 45))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtmotivo_viaje, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -322,7 +380,7 @@ public final class Jingreso extends javax.swing.JFrame {
 
         jLayeredPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(txtpersonas, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(txtnum_personas, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(btnsalida, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(btningresar, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -349,11 +407,11 @@ public final class Jingreso extends javax.swing.JFrame {
                             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jdfechaingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
+                                .addComponent(jdfechaingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtnum_personas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtidingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
@@ -373,7 +431,7 @@ public final class Jingreso extends javax.swing.JFrame {
                             .addComponent(jdfechaingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
-                                .addComponent(txtpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtnum_personas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -435,25 +493,18 @@ public final class Jingreso extends javax.swing.JFrame {
 
         tablalistado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Numero", "Cliente", "Empleado", "FechaIngreso", "Costo", "Tipo", "Telefono", "Personas", "Motivo del viaje"
+                "Numero", "Cliente", "Telefono", "Fecha Ingreso", "N° Personas", "Tipo Cliente", "Costo", "Motivo de Viaje"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -474,31 +525,28 @@ public final class Jingreso extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(lbltotalregistro)
-                                .addGap(48, 48, 48)
-                                .addComponent(btnverconsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnrealizarpagos, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbltotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btneliminar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnsalir)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane3))
-                .addContainerGap())
+                        .addGap(14, 14, 14)
+                        .addComponent(lbltotalregistro)
+                        .addGap(48, 48, 48)
+                        .addComponent(btnverconsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnrealizarpagos, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbltotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btneliminar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnsalir)))
+                .addContainerGap(39, Short.MAX_VALUE))
+            .addComponent(jScrollPane3)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -561,9 +609,9 @@ public final class Jingreso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtpersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpersonasActionPerformed
+    private void txtnum_personasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnum_personasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtpersonasActionPerformed
+    }//GEN-LAST:event_txtnum_personasActionPerformed
 
     private void txtmotivo_viajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmotivo_viajeActionPerformed
         // TODO add your handling code here:
@@ -610,42 +658,43 @@ public final class Jingreso extends javax.swing.JFrame {
             return;
         }
 
-        if (txtpersonas.getText().length() == 0) {
+        if (txtnum_personas.getText().length() == 0) {
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar numero de personas");
-            txtpersonas.requestFocus();
+            txtnum_personas.requestFocus();
             return;
+            
         }
+         
 
         Dingreso dts = new Dingreso();
         Fingreso func = new Fingreso();
 
         dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
         dts.setIdcliente(Integer.parseInt(txtidcliente.getText()));
-        dts.setIdempleado(idusuario);
 
-        // int seleccionado = comtiporeserva.getSelectedIndex();
-        //  dts.setTiporeserva((String) comtiporeserva.getItemAt(seleccionado));
-         Calendar cal;
+        Calendar cal;
         int d, m, a;
 
-      cal = jdfechaingreso.getCalendar();
-      d = cal.get(Calendar.DAY_OF_MONTH);
+        cal = jdfechaingreso.getCalendar();
+        d = cal.get(Calendar.DAY_OF_MONTH);
         m = cal.get(Calendar.MONTH);
         a = cal.get(Calendar.YEAR) - 1900;
-        dts.setFechaingreso(new Date(a, m, d));
-
-        try {
-
-        } catch (Exception e) {
-        }
-         
+        dts.setFecha_hora_ingreso(new Date(a, m, d));
+        
+        dts.setNum_personas(Integer.parseInt(txtnum_personas.getText()));
+        
+        int seleccionado = cbotipo_cliente.getSelectedIndex();
+        dts.setTipo_cliente((String) cbotipo_cliente.getItemAt(seleccionado));
+        
         dts.setCostoalojamiento(Double.valueOf(txtcostoalojamiento.getText()));
+        dts.setMotivo_viaje(txtmotivo_viaje.getText());
+        
+      //  int seleccionado = comestado.getSelectedIndex();
+        dts.setEstado((String) comestado.getItemAt(seleccionado));
 
-        // seleccionado = cbotipo.getSelectedIndex();
-        // dts.setTipo((String) cbotipo.getItemAt(seleccionado));
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
-                JOptionPane.showMessageDialog(rootPane, "La reserva fue registrada satisfactoriamente");
+                JOptionPane.showMessageDialog(rootPane, "Ingreso satisfactoriamente");
 
                 Fhabitacion func3 = new Fhabitacion();
                 Dhabitacion dts3 = new Dhabitacion();
@@ -656,9 +705,9 @@ public final class Jingreso extends javax.swing.JFrame {
 
         } else if (accion.equals("editar")) {
             dts.setIdingreso(Integer.parseInt(txtidingreso.getText()));
-            dts.setIdempleado(Integer.parseInt(txtidempleado.getText()));
+
             if (func.editar(dts)) {
-                JOptionPane.showMessageDialog(rootPane, "La reserva fue Editada satisfactoriamente");
+                JOptionPane.showMessageDialog(rootPane, "El ingreso fue Editado satisfactoriamente");
                 mostrar("");
                 inhabilitar();
             }
@@ -680,7 +729,7 @@ public final class Jingreso extends javax.swing.JFrame {
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         // TODO add your handling code here:
         if (!txtidingreso.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar la Reserva?", "Confirmar", 2);
+            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar el ingreso?", "Confirmar", 2);
 
             if (confirmacion == 0) {
                 Fingreso func = new Fingreso();
@@ -713,20 +762,20 @@ public final class Jingreso extends javax.swing.JFrame {
     }//GEN-LAST:event_btnverconsumoActionPerformed
 
     private void btnrealizarpagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrealizarpagosActionPerformed
-        /* TODO add your handling code here:
+         
         int fila = tablalistado.getSelectedRow();
 
-        frmPago.idreserva = tablalistado.getValueAt(fila, 0).toString();
-        frmPago.cliente = tablalistado.getValueAt(fila, 4).toString();
-        frmPago.totalreserva =Double.parseDouble( tablalistado.getValueAt(fila, 11).toString());
+        Jpago.idingreso = tablalistado.getValueAt(fila, 0).toString();
+        Jpago.cliente = tablalistado.getValueAt(fila, 4).toString();
+        Jpago.totalingreso = tablalistado.getValueAt(fila, 9).toString();
 
-        frmPago.idhabitacion = tablalistado.getValueAt(fila, 1).toString();
-        frmPago.habitacion = tablalistado.getValueAt(fila, 2).toString();
+        Jpago.idhabitacion = tablalistado.getValueAt(fila, 1).toString();
+        Jpago.habitacion = tablalistado.getValueAt(fila, 2).toString();
 
-        frmPago form = new frmPago();
-        frminicio.escritorio.add(form);
+        Jpago form = new Jpago();
+       
         form.toFront();
-        form.setVisible(true);*/
+        form.setVisible(true);
     }//GEN-LAST:event_btnrealizarpagosActionPerformed
 
     private void tablalistadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMouseClicked
@@ -744,13 +793,15 @@ public final class Jingreso extends javax.swing.JFrame {
         txtidcliente.setText(tablalistado.getValueAt(fila, 3).toString());
         txtcliente.setText(tablalistado.getValueAt(fila, 4).toString());
         txttelefono.setText(tablalistado.getValueAt(fila, 5).toString());
-        txtidempleado.setText(tablalistado.getValueAt(fila, 6).toString());
-        txtempleado.setText(tablalistado.getValueAt(fila, 7).toString());
-        jdfechaingreso.setDate(Date.valueOf(tablalistado.getValueAt(fila, 8).toString()));
+        
+        jdfechaingreso.setDate(Date.valueOf(tablalistado.getValueAt(fila, 6).toString()));
+        txtnum_personas.setText(tablalistado.getValueAt(fila, 7).toString());
+        cbotipo_cliente.setSelectedItem(tablalistado.getValueAt(fila, 8).toString());
         txtcostoalojamiento.setText(tablalistado.getValueAt(fila, 9).toString());
-        cbotipo.setSelectedItem(tablalistado.getValueAt(fila, 10).toString());
-        txtpersonas.setText(tablalistado.getValueAt(fila, 11).toString());
-        txtmotivo_viaje.setText(tablalistado.getValueAt(fila, 12).toString());
+        txtmotivo_viaje.setText(tablalistado.getValueAt(fila, 10).toString());
+        comestado.setSelectedItem(tablalistado.getValueAt(fila,11).toString());
+        
+        
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void txtidhabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidhabitacionActionPerformed
@@ -804,8 +855,10 @@ public final class Jingreso extends javax.swing.JFrame {
     private javax.swing.JButton btnverconsumo;
     private javax.swing.JButton btnvistacliente;
     public static javax.swing.JButton btnvistahabitacion;
-    private javax.swing.JComboBox<String> cbotipo;
+    private javax.swing.JComboBox<String> cbotipo_cliente;
+    private javax.swing.JComboBox<String> comestado;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel18;
@@ -834,8 +887,8 @@ public final class Jingreso extends javax.swing.JFrame {
     public static javax.swing.JTextField txtidhabitacion;
     public static javax.swing.JTextField txtidingreso;
     private javax.swing.JTextField txtmotivo_viaje;
+    private javax.swing.JTextField txtnum_personas;
     public static javax.swing.JTextField txtnumero;
-    private javax.swing.JTextField txtpersonas;
     public static javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 

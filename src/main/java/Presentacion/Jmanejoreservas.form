@@ -56,9 +56,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Component id="jlnuevo" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="jlnuevo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -427,15 +428,12 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                              <Component id="btnrealizarpagos" min="-2" pref="135" max="-2" attributes="0"/>
-                              <EmptySpace pref="92" max="32767" attributes="0"/>
                               <Component id="lbltotalregistros" min="-2" pref="109" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtbuscar" min="-2" pref="169" max="-2" attributes="0"/>
@@ -464,12 +462,9 @@
                           <Component id="btnsalir" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="334" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="341" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbltotalregistros" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnrealizarpagos" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lbltotalregistros" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -529,14 +524,6 @@
                 <Property name="text" type="java.lang.String" value="Registros"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnrealizarpagos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Realizar Pagos"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnrealizarpagosActionPerformed"/>
-              </Events>
-            </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -552,9 +539,9 @@
                         <Column editable="true" title="Cliente" type="java.lang.String"/>
                         <Column editable="true" title="Empleado" type="java.lang.String"/>
                         <Column editable="true" title="Tipo Reserva" type="java.lang.String"/>
-                        <Column editable="true" title="FechaReserva" type="java.lang.Boolean"/>
-                        <Column editable="true" title="Fecha Salida" type="java.lang.Boolean"/>
-                        <Column editable="true" title="FechaIngreso" type="java.lang.Boolean"/>
+                        <Column editable="true" title="FechaReserva" type="java.lang.String"/>
+                        <Column editable="true" title="Fecha Salida" type="java.lang.String"/>
+                        <Column editable="true" title="FechaIngreso" type="java.lang.String"/>
                         <Column editable="true" title="Costo" type="java.lang.Double"/>
                         <Column editable="true" title="Estado" type="java.lang.String"/>
                         <Column editable="true" title="N Noches" type="java.lang.String"/>

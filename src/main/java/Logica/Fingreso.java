@@ -14,16 +14,16 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Fingreso {
 
-    private Cconexion mysql = new Cconexion();
-    private Connection cn = mysql.establecerConexion();
+    private final Cconexion mysql = new Cconexion();
+    private final Connection cn = mysql.establecerConexion();
     private String sSQL = "";
     public Integer totalregistros;
 
     public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"ID", "Idhabitacion", "Numero", "idcliente", "Cliente", "Idempleado"
-            + "Empleado", "costoalojamiento", "fechaingreso", "tipo", "motivo_viaje", "Personas"};
+        String[] titulos = {"Idingreso", "Idhabitacion", "Numero", "Idcliente", "Cliente", "clientete",
+            "Fecha_hora_ingreso", "Num_personas", "tipo_cliente", "Costoalojamiento", "Motivo_viaje", "Estado"};
 
         String[] registro = new String[12];
 
@@ -33,12 +33,9 @@ public class Fingreso {
         sSQL = "select i.idingreso,i.idhabitacion,h.numero,i.idcliente,"
                 + "(select nombres from persona where idpersona=i.idcliente)as clienten,"
                 + "(select apellidos from persona where idpersona=i.idcliente)as clienteap,"
-                + "(select numdocumento form persona where idpersona = i.cliente) as clientenu"
-                + "(select telefono form persona where idpersona= i.idcliente)as clientete,"
-                + "i.idempleado,(select nombres from persona where idpersona = i.idempleado)as empleadon,"
-                + "(select apellidos from persona where idpersona = i.idempleado)as empleadoap,"
-                + "i.fechaingreso,i.personas,i.costoalojamiento,i.tipo,i.motivo_viaje,"
-                + "i.costoalojamiento from ingreso i inner join habitacion h on i.idhabitacion=h.idhabitacion where r.fechaingreso like '%" + buscar + "%' order by idreserva desc";
+                + "(select telefono from persona where idpersona= i.idcliente)as clientete,"
+                + "i.fecha_hora_ingreso,i.num_personas,i.tipo_cliente,i.motivo_viaje,i.estado,"
+                + "i.costoalojamiento from ingreso i inner join habitacion h on i.idhabitacion=h.idhabitacion where i.fecha_hora_ingreso like '%" + buscar + "%' order by idingreso desc";
 
         try {
             Statement st = cn.createStatement();
@@ -51,13 +48,12 @@ public class Fingreso {
                 registro[3] = rs.getString("idcliente");
                 registro[4] = rs.getString("clienten") + " " + rs.getString("clienteap");
                 registro[5] = rs.getString("clientete");
-                registro[6] = rs.getString("idempleado");
-                registro[7] = rs.getString("empleadon") + " " + rs.getString("empleadop");
-                registro[8] = rs.getString("fechaingreso");
+                registro[6] = rs.getString("fecha_hora_ingreso");
+                registro[7] = rs.getString("num_personas");
+                registro[8] = rs.getString("tipo_cliente");
                 registro[9] = rs.getString("costoalojamiento");
-                registro[10] = rs.getString("tipo");
-                registro[11] = rs.getString("personas");
-                registro[12] = rs.getString("motivo_viaje");
+                registro[10] = rs.getString("motivo_viaje");
+                registro[11] = rs.getString("estado");
 
                 totalregistros = totalregistros + 1;
                 modelo.addRow(registro);
@@ -73,29 +69,29 @@ public class Fingreso {
     }
 
     public boolean insertar(Dingreso dts) {
-        sSQL = "INSERT INTO reserva (idhabitacion, idcliente, idempleado, tipo, fechaingreso, costoalojamiento, motivo_viaje, personas)"
-                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        sSQL = "INSERT INTO ingreso (idhabitacion, idcliente, fecha_hora_ingreso, num_personas, tipo_cliente, costoalojamiento, motivo_viaje,estado)"
+                + " VALUES (?, ?, ?, ?, ?, ?, ?,?)";
         try ( PreparedStatement pst = cn.prepareStatement(sSQL)) {
             pst.setInt(1, dts.getIdhabitacion());
             pst.setInt(2, dts.getIdcliente());
-            pst.setInt(3, dts.getIdempleado());
-            pst.setDouble(4, dts.getCostoalojamiento());
-            pst.setDate(5, dts.getFechaingreso());
-            pst.setString(6, dts.getTipo());
-            pst.setString(7, dts.getPersonas());
-            pst.setString(8, dts.getMotivo_viaje());
+            pst.setDate(3, dts.getFecha_hora_ingreso());
+            pst.setInt(4, dts.getNum_personas());
+            pst.setString(5, dts.getTipo_cliente());
+            pst.setDouble(6, dts.getCostoalojamiento());
+            pst.setString(7, dts.getMotivo_viaje());
+             pst.setString(8, dts.getEstado());
 
             int n = pst.executeUpdate();
-
+            // JOptionPane.showMessageDialog(null, "DATOS ALMACENADOS CORRECTAMENTE");
             return n != 0;
         } catch (SQLException e) {
-
+            JOptionPane.showConfirmDialog(null, e);
             return false;
         }
     }
 
     public boolean eliminar(Dingreso dts) {
-        sSQL = "delete from reserva where idreserva=?";
+        sSQL = "delete from ingreso where idingreso=?";
 
         try {
 
@@ -114,19 +110,19 @@ public class Fingreso {
     }
 
     public boolean editar(Dingreso dts) {
-        sSQL = "update reserva set idhabitacion=?,idcliente=?,idempleado=?,tipo=?,fechaingreso=?,costoalojamiento=?,motivo_viaje=?, personas=?"
-                + " where idreserva=?";
+        sSQL = "update ingreso set idhabitacion=?,idcliente=?,fecha_hora_ingreso=?,num_personas=?,tipo_cliente=?,costoalojamiento=?,motivo_viaje=?,estado=?"
+                + " where idingreso=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sSQL);
             pst.setInt(1, dts.getIdhabitacion());
             pst.setInt(2, dts.getIdcliente());
-            pst.setInt(3, dts.getIdempleado());
-            pst.setString(4, dts.getTipo());
-            pst.setDate(5, dts.getFechaingreso());
+            pst.setDate(3, dts.getFecha_hora_ingreso());
+            pst.setInt(4, dts.getNum_personas());
+            pst.setString(5, dts.getTipo_cliente());
             pst.setDouble(6, dts.getCostoalojamiento());
             pst.setString(7, dts.getMotivo_viaje());
-            pst.setString(8, dts.getPersonas());
+             pst.setString(8, dts.getEstado());
 
             pst.setInt(9, dts.getIdingreso());
 
@@ -139,5 +135,21 @@ public class Fingreso {
             return false;
         }
     }
+   public boolean pagar (Dingreso dts){
+      sSQL = "update ingreso set estado = 'pagada'"+"where idingreso=?";
 
+  
+    try {
+         PreparedStatement pst =cn.prepareStatement(sSQL);
+         pst.setInt(1, dts.getIdingreso());  
+         
+          int n = pst.executeUpdate();
+
+            return n != 0;
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(null, e);
+            }
+        return false;
+   
+     }
 }

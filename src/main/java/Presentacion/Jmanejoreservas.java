@@ -159,7 +159,6 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
         btneliminar = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
-        btnrealizarpagos = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablalistado = new javax.swing.JTable();
         btnnuevo = new javax.swing.JButton();
@@ -410,13 +409,6 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
 
         lbltotalregistros.setText("Registros");
 
-        btnrealizarpagos.setText("Realizar Pagos");
-        btnrealizarpagos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnrealizarpagosActionPerformed(evt);
-            }
-        });
-
         tablalistado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -429,7 +421,7 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -448,14 +440,11 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(btnrealizarpagos, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                         .addComponent(lbltotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel9)
                         .addGap(18, 18, 18)
                         .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -479,11 +468,9 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
                     .addComponent(btneliminar)
                     .addComponent(btnsalir))
                 .addGap(25, 25, 25)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbltotalregistros)
-                    .addComponent(btnrealizarpagos)))
+                .addComponent(lbltotalregistros))
         );
 
         btnnuevo.setBackground(new java.awt.Color(153, 153, 153));
@@ -670,9 +657,10 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jlnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -847,24 +835,6 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnsalirActionPerformed
 
-    private void btnrealizarpagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrealizarpagosActionPerformed
-        /* TODO add your handling code here:
-        int fila = tablalistado.getSelectedRow();
-
-        frmPago.idreserva = tablalistado.getValueAt(fila, 0).toString();
-        frmPago.cliente = tablalistado.getValueAt(fila, 4).toString();
-        frmPago.totalreserva =Double.parseDouble( tablalistado.getValueAt(fila, 11).toString());
-
-        frmPago.idhabitacion = tablalistado.getValueAt(fila, 1).toString();
-        frmPago.habitacion = tablalistado.getValueAt(fila, 2).toString();
-
-        frmPago form = new frmPago();
-        frminicio.escritorio.add(form);
-        form.toFront();
-        form.setVisible(true);*/
-
-    }//GEN-LAST:event_btnrealizarpagosActionPerformed
-
     private void txtempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtempleadoActionPerformed
        
     }//GEN-LAST:event_txtempleadoActionPerformed
@@ -940,7 +910,6 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnnuevo;
-    private javax.swing.JButton btnrealizarpagos;
     private javax.swing.JButton btnsalir;
     private javax.swing.JButton butsalir;
     private javax.swing.JComboBox<String> comestado;
