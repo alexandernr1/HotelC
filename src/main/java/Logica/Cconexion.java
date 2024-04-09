@@ -10,8 +10,8 @@ public class Cconexion {
     
     Connection conectar = null;
     String user ="root";
-    String pass ="";
-    String bd ="reserva";
+    String pass ="admin";
+    String bd ="reservacombugas";
     String ip ="localhost";
     String puerto ="3306";
     

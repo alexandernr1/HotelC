@@ -17,21 +17,17 @@ public class Jlimpieza extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("LIMPIEZA");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // mostrarTiempo();
+       
         inhabilitar();
     }
     private final String accion = "guardar";
     public static int idusuario;
 
-    /*private void mostrarTiempo() {
-
-//        jbfecha.setText(time.fechacomp);
-
-    }*/
+   
     static void inhabilitar() {
-        // txtidempleado.setVisible(false);
-        txtidlimpieza.setVisible(false);
         txtidempleado.setVisible(false);
+        txtidlimpieza.setVisible(false);
+       
 
     }
 
@@ -63,20 +59,27 @@ public class Jlimpieza extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("PROGRAMACIÓN DE LIMPIEZA"));
 
+        jLabel2.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel2.setText("N° Habitación:");
 
+        jLabel3.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel3.setText("Estado:");
 
+        jLabel4.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel4.setText("Encargado:");
 
+        jLabel5.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel5.setText("Fecha:");
 
+        jLabel6.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel6.setText("Tipo Habitación:");
 
+        jLabel7.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel7.setText("turno:");
 
         txtidlimpieza.setText("IDL");
 
+        cboestado.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         cboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Limpieza", "Item 2", "Item 3", "Item 4" }));
 
         txtidempleado.setText("IDE");
@@ -116,6 +119,7 @@ public class Jlimpieza extends javax.swing.JFrame {
             }
         });
 
+        empleado.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         empleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 empleadoActionPerformed(evt);
@@ -129,8 +133,10 @@ public class Jlimpieza extends javax.swing.JFrame {
             }
         });
 
+        cboturno.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         cboturno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Turno 1", "Turno 2", "Turno 3", " " }));
 
+        cbotipo_habitacion.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         cbotipo_habitacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Individual", "Doble", "Triple" }));
         cbotipo_habitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +144,7 @@ public class Jlimpieza extends javax.swing.JFrame {
             }
         });
 
+        cbonumero.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         cbonumero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "21", "22", "23", "24", "25", "26", "27", "28", "29", "210", "211", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "310", "311", "312", " " }));
         cbonumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,9 +280,7 @@ public class Jlimpieza extends javax.swing.JFrame {
         m = cal.get(Calendar.MONTH);
         a = cal.get(Calendar.YEAR) - 1900;
         dts.setFecha(new Date(a, m, d));
-        /*  Date fechaSeleccionada = new java.sql.Date(dcfecha.getDate().getTime());
-        dts.setFecha(fechaSeleccionada);
-         */
+      
 
         dts.setEstado(cboestado.getSelectedItem().toString());
         dts.setTurno(cboturno.getSelectedItem().toString());

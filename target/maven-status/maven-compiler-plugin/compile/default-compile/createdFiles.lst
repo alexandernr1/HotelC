@@ -5,7 +5,6 @@ Presentacion\Jcliente$8.class
 Presentacion\Jmanejoreservas$8.class
 Presentacion\Jturnos$2.class
 Presentacion\Jlimpieza$8.class
-Presentacion\Jmenuhotel$11.class
 Datos\Dingreso.class
 Presentacion\Jcliente$17.class
 Presentacion\Jmenuprin$3.class
@@ -19,7 +18,6 @@ Presentacion\Jmanejoreservas$3.class
 Logica\Fcliente.class
 Logica\Fhabitacion.class
 Presentacion\Jregistroempleados$10.class
-Presentacion\Jvistaempleado$6.class
 Presentacion\Jregistroempleados$16.class
 Presentacion\Jpago.class
 Presentacion\Jsalidahuesped$1.class
@@ -36,7 +34,6 @@ Presentacion\Jlimpieza$7.class
 Datos\Dcliente.class
 Datos\Dvehiculo.class
 Presentacion\Jhabitaciones$4.class
-Presentacion\Jvistaempleado$5.class
 Presentacion\Jsalidahuesped$2.class
 Presentacion\Jcliente$18.class
 Logica\Freserva.class
@@ -54,6 +51,7 @@ Presentacion\Jingreso$5.class
 Presentacion\Jmanejoreservas$4.class
 Presentacion\Jhabitaciones$3.class
 Presentacion\Jpago$10.class
+Presentacion\Jturnos$6.class
 Presentacion\Jingreso$2.class
 Presentacion\Jcliente$20.class
 Presentacion\Jcliente$1.class
@@ -80,6 +78,7 @@ Presentacion\Jcliente.class
 Presentacion\Jregistroempleados$17.class
 Presentacion\Jcliente$15.class
 Presentacion\Jvistahabitacion$2.class
+Presentacion\Jturnos$7.class
 Presentacion\Jingreso$3.class
 Presentacion\Jcliente$3.class
 Presentacion\Jvistaempleado.class
@@ -97,6 +96,7 @@ Presentacion\Jvistacliente.class
 Presentacion\Jvistahabitacion$3.class
 Presentacion\Jingreso$15.class
 Presentacion\Jmanejoreservas$1.class
+Presentacion\Jturnos$8.class
 Presentacion\Jmenuhotel$10.class
 Presentacion\Jmenuprin$4.class
 Datos\Dpersona.class

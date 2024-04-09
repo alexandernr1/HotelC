@@ -50,7 +50,6 @@ public final class Jmenuhotel extends javax.swing.JFrame {
         lblnombres = new javax.swing.JLabel();
         lblapellidos = new javax.swing.JLabel();
         lblacceso = new javax.swing.JLabel();
-        butsalir1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -251,30 +250,20 @@ public final class Jmenuhotel extends javax.swing.JFrame {
 
         jPanel2.add(escritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 560, 100));
 
-        butsalir1.setBackground(new java.awt.Color(153, 153, 153));
-        butsalir1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\COMBUGAS\\Complementos\\Images\\salir.gif")); // NOI18N
-        butsalir1.setText("SALIR");
-        butsalir1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        butsalir1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butsalir1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(butsalir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 74, 31));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -333,12 +322,15 @@ public final class Jmenuhotel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnlistaesperaActionPerformed
 
     private void btncambioturnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncambioturnoActionPerformed
-        new Jturnos().setVisible(true);
-    }//GEN-LAST:event_btncambioturnoActionPerformed
+       // new Jturnos().setVisible(true);
+        Jturnos form = new Jturnos();
+        form.toFront();
+        form.setVisible(true);
+        Jturnos.txtidempleado.setText(lblidpersona.getText());
+        Jturnos.txtempleado.setText(lblnombres.getText() + " " + lblapellidos.getText());
+        Jturnos.idusuario = Integer.parseInt(lblidpersona.getText());
 
-    private void butsalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butsalir1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butsalir1ActionPerformed
+    }//GEN-LAST:event_btncambioturnoActionPerformed
 
     private void btnlimpiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiezaActionPerformed
          Jlimpieza form = new Jlimpieza();
@@ -391,7 +383,6 @@ public final class Jmenuhotel extends javax.swing.JFrame {
     private javax.swing.JButton btnregistro;
     private javax.swing.JButton btnreservas;
     private javax.swing.JButton btnsalidahuesped;
-    private javax.swing.JButton butsalir1;
     public static javax.swing.JPanel escritorio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;

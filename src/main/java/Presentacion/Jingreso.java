@@ -267,7 +267,7 @@ public final class Jingreso extends javax.swing.JFrame {
         jLabel11.setText("Estado:");
 
         comestado.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
-        comestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " pagada", "Anulada", " " }));
+        comestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pendiente ", "Pagada", "Anulada", " " }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -361,6 +361,7 @@ public final class Jingreso extends javax.swing.JFrame {
         });
 
         btningresar.setBackground(new java.awt.Color(153, 153, 153));
+        btningresar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\HotelC\\src\\main\\java\\File\\nuevo.GIF")); // NOI18N
         btningresar.setText("GUARDAR");
         btningresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
