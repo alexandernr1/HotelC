@@ -19,7 +19,7 @@ public class Freserva {
     public DefaultTableModel mostrar(String buscar) {
         DefaultTableModel modelo;
 
-        String[] titulos = {"Idreserva", "Idhabitacion", "Numero", "idcliente", "Cliente", "Idempleado", "Empleado", "TipoReserva", "FechaReserva", "FechaIngreso", "FechaSalida", "Costo", "Estado", "Numnoches", "Numpersonas"};
+        String[] titulos = {"Idreserva", "Idhabitacion", "Numero", "idcliente", "Cliente", "Idempleado", "Empleado", "TipoReserva", "FechaReserva", "FechaIngreso", "FechaSalida", "Costo", "Numnoches", "Numpersonas", "Estado"};
         String[] registro = new String[15];
 
         totalregistros = 0;

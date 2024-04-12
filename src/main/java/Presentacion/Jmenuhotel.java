@@ -25,7 +25,13 @@ public final class Jmenuhotel extends javax.swing.JFrame {
         lblnombres.setText(nombres);
         lblapellidos.setText(apellidos);
         lblacceso.setText(acceso);
+        inhabilitar();
+    }
 
+    static void inhabilitar() {
+        lblidpersona.setVisible(false);
+        lblacceso.setVisible(false); 
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -322,21 +328,28 @@ public final class Jmenuhotel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnlistaesperaActionPerformed
 
     private void btncambioturnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncambioturnoActionPerformed
-       // new Jturnos().setVisible(true);
-        Jturnos form = new Jturnos();
-        form.toFront();
-        form.setVisible(true);
-        Jturnos.txtidempleado.setText(lblidpersona.getText());
-        Jturnos.txtempleado.setText(lblnombres.getText() + " " + lblapellidos.getText());
-        Jturnos.idusuario = Integer.parseInt(lblidpersona.getText());
+        // new Jturnos().setVisible(true);
+        Boolean sesionIniciada = false;
+        if (!sesionIniciada) {
+            Juselogin jturnos = new Juselogin();
+
+//        Jturnos form = new Jturnos();
+            jturnos.toFront();
+            jturnos.setVisible(true);
+            Jturnos.txtidempleado.setText(lblidpersona.getText());
+            Jturnos.txtempleado.setText(lblnombres.getText() + " " + lblapellidos.getText());
+            Jturnos.idusuario = Integer.parseInt(lblidpersona.getText());
+
+            sesionIniciada = true;
+        }
 
     }//GEN-LAST:event_btncambioturnoActionPerformed
 
     private void btnlimpiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiezaActionPerformed
-         Jlimpieza form = new Jlimpieza();
+        Jlimpieza form = new Jlimpieza();
         form.toFront();
         form.setVisible(true);
-       
+
     }//GEN-LAST:event_btnlimpiezaActionPerformed
 
     /**

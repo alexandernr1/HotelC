@@ -4,15 +4,60 @@ import Datos.Dlimpieza;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Flimpieza {
 
     private final Cconexion mysql = new Cconexion();
     private final Connection cn = mysql.establecerConexion();
     private String sSQL = "";
+    public Integer totalregistros;
+    
 
+    public DefaultTableModel mostrar(String buscar) {
+    DefaultTableModel modelo;
+
+    String[] titulos = {"Idlimpieza", "Idempleado","Empleado", "Numero Habita", "Fecha", "Tipo habita", "Estado", "Turno"};
+    String[] registro = new String[8];
+
+    totalregistros = 0;
+    modelo = new DefaultTableModel(null, titulos);
+
+    sSQL = "SELECT l.idlimpieza, l.idempleado, p.nombres AS empleadon, p.apellidos AS empleadoap, l.numero, l.fecha, l.tipo_habitacion, l.estado, l.turno " +
+           "FROM limpieza l " +
+           "INNER JOIN persona p ON l.idempleado = p.idpersona " +
+           "WHERE l.numero LIKE '%" + buscar + "%' " +
+           "ORDER BY idlimpieza DESC";
+
+    try {
+        Statement st = cn.createStatement();
+        ResultSet rs = st.executeQuery(sSQL);
+
+        while (rs.next()) {
+            registro[0] = rs.getString("idlimpieza");
+            registro[1] = rs.getString("idempleado");
+            registro[2] = rs.getString("empleadon") + " " + rs.getString("empleadoap");
+            registro[3] = rs.getString("numero");
+            registro[4] = rs.getString("fecha");
+            registro[5] = rs.getString("tipo_habitacion");
+            registro[6] = rs.getString("estado");
+            registro[7] = rs.getString("turno");
+
+            totalregistros++;
+            modelo.addRow(registro);
+        }
+
+        return modelo;
+
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "NO SE PUEDE MOSTRAR LOS DATOS");
+        return null;
+    }
+}
    
     public boolean insertar(Dlimpieza dts) {
         sSQL = "insert into limpieza(idempleado, numero,  tipo_habitacion, fecha, estado, turno)" + "values (?,?,?,?,?,?)";
@@ -34,57 +79,17 @@ public class Flimpieza {
             return false;
         }
     }
-    /* public DefaultTableModel mostrar(String buscar) {
-        DefaultTableModel modelo;
-
-        String[] titulos = {"Idlimpieza", "Idempleado", "Numero", "fecha", "tipo_habitacion", "estado", "turno"};
-        String[] registro = new String[7];
-
-        //  totalregistros = 0;
-        modelo = new DefaultTableModel(null, titulos);
-
-        sSQL = "select l.idlimpieza,l.numero,"
-                + "l.idempleado,(select nombres from persona where idpersona = l.idempleado)as empleadon,"
-                + "(select apellidos from persona where idpersona = l.idempleado)as empleadoap,"
-                + "l.fecha,l.estado,l.tipo_habitacion,l.turno from limpieza l inner join limpieza l on l.idlimpieza=l.idlimpieza where l.numero like '%" + buscar + "%' order by idlimpieza desc";
-
-        try {
-            Statement st = cn.createStatement();
-            ResultSet rs = st.executeQuery(sSQL);
-
-            while (rs.next()) {
-                registro[0] = rs.getString("idlimpieza");
-                registro[1] = rs.getString("idempleado");
-                registro[2] = rs.getString("empleadon") + " " + rs.getString("empleadoap");
-                registro[3] = rs.getString("numero");
-                registro[4] = rs.getString("fecha");
-                registro[5] = rs.getString("tipo_habitacion");
-                registro[6] = rs.getString("estado");
-                registro[7] = rs.getString("turno");
-
-//                totalregistros = totalregistros + 1;
-                modelo.addRow(registro);
-
-            }
-
-            return modelo;
-
-        } catch (SQLException e) {
-            JOptionPane.showConfirmDialog(null, "NO SE PUEDE MOSTRAR LOS DATOS");
-            return null;
-        }
-
-    }*/
+   
 
 
- /* public boolean eliminar(Dlimpieza dts) {
-        sSQL = "delete from reserva where idreserva=?";
+  public boolean eliminar(Dlimpieza dts) {
+        sSQL = "delete from limpieza where idlimpieza=?";
 
         try {
 
             PreparedStatement pst = cn.prepareStatement(sSQL);
 
-            pst.setInt(1, dts.getIdreserva());
+            pst.setInt(1, dts.getIdlimpieza());
 
             int n = pst.executeUpdate();
 
@@ -97,24 +102,19 @@ public class Flimpieza {
     }
 
     public boolean editar(Dlimpieza dts) {
-        sSQL = "update reserva set idhabitacion=?,idcliente=?,idempleado=?,tiporeserva=?,fechareserva=?,fechaingreso=?,fechasalida=?,costoalojamiento=?, numnoches=?, numpersonas=?, estado=?"
-                + " where idreserva=?";
+        sSQL = "update limpieza set idempleado=?, numero=?, tipo_habitacion=?, fecha=?, estado=?, turno=?"
+                + " where idlimpieza=?";
 
         try {
             PreparedStatement pst = cn.prepareStatement(sSQL);
-            pst.setInt(1, dts.getIdhabitacion());
-            pst.setInt(2, dts.getIdcliente());
-            pst.setInt(3, dts.getIdempleado());
-            pst.setString(4, dts.getTiporeserva());
-            pst.setDate(5, dts.getFechareserva());
-            pst.setDate(6, dts.getFechaingreso());
-            pst.setDate(7, dts.getFechasalida());
-            pst.setDouble(8, dts.getCostoalojamiento());
-            pst.setInt(9, dts.getNumnoches());
-            pst.setInt(10, dts.getNumpersonas());
-            pst.setString(11, dts.getEstado());
-
-            pst.setInt(12, dts.getIdreserva());
+             pst.setInt(1, dts.getIdempleado());
+            pst.setInt(2, dts.getNumero());
+            pst.setString(3, dts.getTipo_habitacion());
+            pst.setDate(4, dts.getFecha());
+            pst.setString(5, dts.getEstado());
+            pst.setString(6, dts.getTurno());
+            
+            pst.setInt(7, dts.getIdlimpieza());
 
             int n = pst.executeUpdate();
 
@@ -124,5 +124,5 @@ public class Flimpieza {
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
-    }*/
+    }
 }

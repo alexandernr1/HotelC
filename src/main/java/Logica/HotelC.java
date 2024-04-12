@@ -3,13 +3,13 @@
 package Logica;
 
 
-import Presentacion.Juselogin;
+import Presentacion.LoguinDeSistema;
 
 
 public class HotelC {
 
     public static void main(String[] args) {
-        Juselogin prin = new Juselogin();
+        LoguinDeSistema prin = new LoguinDeSistema();
     prin.setVisible(true);
         Cconexion objetoConexion = new Cconexion();
         objetoConexion.establecerConexion();

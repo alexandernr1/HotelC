@@ -32,7 +32,7 @@ public class Juselogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INGRESO AL SISTEMA", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 0, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INICIO TURNOS", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 0, 14))); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -137,15 +137,15 @@ public class Juselogin extends javax.swing.JFrame {
             if (func.totalregistros > 0) {
                 this.dispose();
 
-                Jmenuprin form = new Jmenuprin();
+                Jturnos form = new Jturnos();
                 form.toFront();
                 form.setVisible(true);
 
                 // Establece los valores en Jmenuprin
-                Jmenuprin.lblidpersona.setText(tablalistado.getValueAt(0, 0).toString());
-                Jmenuprin.lblnombres.setText(tablalistado.getValueAt(0, 1).toString());
-                Jmenuprin.lblapellidos.setText(tablalistado.getValueAt(0, 2).toString());
-                Jmenuprin.lblacceso.setText(tablalistado.getValueAt(0, 3).toString());
+                Jmenuhotel.lblidpersona.setText(tablalistado.getValueAt(0, 0).toString());
+                Jmenuhotel.lblnombres.setText(tablalistado.getValueAt(0, 1).toString());
+                Jmenuhotel.lblapellidos.setText(tablalistado.getValueAt(0, 2).toString());
+                Jmenuhotel.lblacceso.setText(tablalistado.getValueAt(0, 3).toString());
 
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Acceso Denegado", "Acceso al Sistema", JOptionPane.ERROR_MESSAGE);

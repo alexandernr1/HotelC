@@ -9,6 +9,10 @@ public final class Jvistahabitacion extends javax.swing.JFrame {
 
     private final javax.swing.JTextField txtCod;
 
+    String cod;
+    String numero;
+    String costoalojamiento;
+
     public Jvistahabitacion() {
         initComponents();
         this.txtCod = new javax.swing.JTextField();
@@ -19,28 +23,48 @@ public final class Jvistahabitacion extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
 
     }
- public void obtenerDatosSeleccionados() {
-    int fila = tablalistado.getSelectedRow();
-    if (fila != -1) {
-        String cod = (String) tablalistado.getValueAt(fila, 0);
-        String numero = tablalistado.getValueAt(fila, 1).toString();
-        String costoalojamiento = tablalistado.getValueAt(fila, 5).toString();
-         pasarDatosAFormularioDestino(cod, numero, costoalojamiento);
-    }
-}
-  private void pasarDatosAFormularioDestino(String cod, String numero, String costoalojamiento) {
-       /* Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
-        Jmanejoreservas.mostrarDatos();
-        setVisible(true);*/
 
-      
+    public void obtenerDatosSeleccionados() {
+        int fila = tablalistado.getSelectedRow();
+        if (fila != -1) {
+            this.cod = (String) tablalistado.getValueAt(fila, 0).toString();
+            this.numero = tablalistado.getValueAt(fila, 1).toString();
+            this.costoalojamiento = tablalistado.getValueAt(fila, 5).toString();
+            pasarDatosAFormularioDestino(cod, numero, costoalojamiento);
+
+            // Comprobación de valores nulos
+            if (cod != null && numero != null && costoalojamiento != null) {
+                pasarDatosAFormularioDestino(cod, numero, costoalojamiento);
+//                pasarDatosFormularioReservas(cod, numero, costoalojamiento);
+            } else {
+                // Manejar el caso de valores nulos aquí, por ejemplo, mostrar un mensaje de error
+                JOptionPane.showMessageDialog(null, "Error: Alguno de los valores seleccionados es nulo.");
+            }
+        }
+    }
+
+    public void pasarDatosAFormularioDestino(String cod, String numero, String costoalojamiento) {
+
+//        Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
+//        Jmanejoreservas.mostrarDatos();
+//        setVisible(true);
+//        this.dispose();
+
         Jingreso Jingreso = new Jingreso(cod, numero, costoalojamiento);
         Jingreso.mostrarDatosSeleccionados();
         setVisible(true);
-          this.dispose();
+        this.dispose();
 
         // Agrega más formularios de destino según sea necesario
     }
+    
+//    public void pasarDatosFormularioReservas(String cod, String numero, String costoalojamiento){
+//        Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
+//        Jmanejoreservas.mostrarDatos();
+//        setVisible(true);
+//        this.dispose();
+//    }
+
     void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
@@ -193,26 +217,16 @@ public final class Jvistahabitacion extends javax.swing.JFrame {
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void tablalistadoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMousePressed
- 
-        
+
         if (evt.getClickCount() == 2) {
             obtenerDatosSeleccionados();
-                
+
         }
-            
-           
-           
-         //   Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
-          // Jmanejoreservas.mostrarDatosSeleccionados();
 
-          
-
-           /* Jingreso Jingreso = new Jingreso(cod, numero, costoalojamiento);
+        //   Jmanejoreservas Jmanejoreservas = new Jmanejoreservas(cod, numero, costoalojamiento);
+        // Jmanejoreservas.mostrarDatosSeleccionados();
+        /* Jingreso Jingreso = new Jingreso(cod, numero, costoalojamiento);
             Jingreso.mostrarDatos();*/
-
-        
-        
-        
 
     }//GEN-LAST:event_tablalistadoMousePressed
 

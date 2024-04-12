@@ -521,7 +521,7 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
 
         jLabel20.setText("Tipo reserva");
 
-        comtiporeserva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Reserva", "Alquilada", " " }));
+        comtiporeserva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En Reserva", "Alquilada", "En espera " }));
 
         jLabel6.setText("N° Personas");
 
@@ -759,6 +759,8 @@ public final class Jmanejoreservas extends javax.swing.JFrame {
         dts.setFechasalida(new Date(a, m, d));
 
         dts.setCostoalojamiento(Double.valueOf(txtcostoalojamiento.getText()));
+        dts.setNumnoches(Integer.parseInt(txtnumnoches.getText()));
+        dts.setNumpersonas(Integer.parseInt(txtnumpersonas.getText()));
         seleccionado = comestado.getSelectedIndex();
         dts.setEstado((String) comestado.getItemAt(seleccionado));
 

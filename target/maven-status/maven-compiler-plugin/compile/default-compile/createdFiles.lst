@@ -1,4 +1,5 @@
 Presentacion\Jmenuprin.class
+Presentacion\Jlimpieza$10.class
 Presentacion\Jlimpieza$2.class
 Presentacion\Jingreso$16.class
 Presentacion\Jcliente$8.class
@@ -11,6 +12,7 @@ Presentacion\Jmenuprin$3.class
 Presentacion\Jpago$9.class
 Presentacion\Jvistahabitacion.class
 Presentacion\Jpago$3.class
+Presentacion\LoguinDeSistema$4.class
 Datos\Dempleado.class
 Presentacion\Jmanejoreservas$14.class
 Presentacion\Jregistroempleados$4.class
@@ -28,13 +30,16 @@ Presentacion\Jingreso$10.class
 Presentacion\Jingreso$9.class
 Presentacion\Jcliente$2.class
 Presentacion\Jcliente$12.class
+Presentacion\LoguinDeSistema$3.class
 Presentacion\Jpago$4.class
 Presentacion\Jingreso$11.class
 Presentacion\Jlimpieza$7.class
 Datos\Dcliente.class
 Datos\Dvehiculo.class
 Presentacion\Jhabitaciones$4.class
+Presentacion\Jvistaempleado$5.class
 Presentacion\Jsalidahuesped$2.class
+.netbeans_automatic_build
 Presentacion\Jcliente$18.class
 Logica\Freserva.class
 Presentacion\Jcliente$11.class
@@ -61,6 +66,7 @@ Presentacion\Jregistroempleados$3.class
 Presentacion\Jcliente$6.class
 Presentacion\Jhabitaciones$13.class
 Presentacion\Jingreso$17.class
+Presentacion\Jlimpieza$9.class
 Presentacion\Jmenuprin$2.class
 Datos\Dhabitacion.class
 Presentacion\Jvistacliente$4.class
@@ -109,7 +115,10 @@ Presentacion\Jlimpieza$5.class
 Presentacion\Jvistacliente$6.class
 Presentacion\Jcliente$14.class
 Presentacion\Jregistroempleados$19.class
+Presentacion\LoguinDeSistema.class
 Presentacion\Jpago$6.class
+Presentacion\LoguinDeSistema$1.class
+Presentacion\Jlimpieza$13.class
 Presentacion\Jvistaempleado$3.class
 Logica\Fpago.class
 Presentacion\Jhabitaciones$7.class
@@ -152,10 +161,12 @@ Presentacion\Jvistaempleado$4.class
 Presentacion\Jingreso$1.class
 Presentacion\Jingreso.class
 Presentacion\Jpago$5.class
+Presentacion\LoguinDeSistema$2.class
 Presentacion\Jmanejoreservas$16.class
 Presentacion\Javanzado$4.class
 Presentacion\Jmenuhotel$3.class
 Presentacion\Jpago$2.class
+Presentacion\LoguinDeSistema$5.class
 Presentacion\Juselogin$1.class
 Presentacion\Jcliente$10.class
 Presentacion\Jcliente$9.class
@@ -170,6 +181,7 @@ Presentacion\Jregistroempleados$12.class
 Logica\HotelC.class
 Presentacion\Juselogin$4.class
 Presentacion\Jmanejoreservas$15.class
+Presentacion\Jlimpieza$11.class
 Presentacion\Jlistaespera$1.class
 Presentacion\Jlimpieza$6.class
 Presentacion\Jturnos.class
@@ -183,9 +195,11 @@ Datos\Dlimpieza.class
 Presentacion\Jturnos$1.class
 Presentacion\Jvistaempleado$2.class
 Presentacion\Jhabitaciones$8.class
+Presentacion\Jlimpieza$12.class
 Presentacion\Juselogin$2.class
 Presentacion\Jmenuhotel$4.class
 Presentacion\Jpago$1.class
+Presentacion\LoguinDeSistema$6.class
 Presentacion\Jlimpieza$3.class
 Presentacion\Javanzado$3.class
 Presentacion\Juselogin.class

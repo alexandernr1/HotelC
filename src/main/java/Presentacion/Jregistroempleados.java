@@ -234,7 +234,7 @@ public final class Jregistroempleados extends javax.swing.JFrame {
             }
         });
 
-        cboacceso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Empleado" }));
+        cboacceso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Empleado", "Administrador", "General" }));
 
         jLabel1.setText("login");
 

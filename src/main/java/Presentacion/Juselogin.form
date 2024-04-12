@@ -48,7 +48,7 @@
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder justification="2" title="INGRESO AL SISTEMA">
+            <TitledBorder justification="2" title="INICIO TURNOS">
               <Font PropertyName="font" name="Segoe UI Black" size="14" style="0"/>
             </TitledBorder>
           </Border>

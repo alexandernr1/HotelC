@@ -11,8 +11,16 @@ public class Jmenuprin extends javax.swing.JFrame {
         setTitle("MENU PRINCIPAL");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(this);
+        inhabilitar();
 
     }
+static void inhabilitar() {
+        lblidpersona.setVisible(false);
+        lblnombres.setVisible(false);
+        lblapellidos.setVisible(false);
+        lblacceso.setVisible(false);
+    }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -24,7 +32,6 @@ public class Jmenuprin extends javax.swing.JFrame {
         lblnombres = new javax.swing.JLabel();
         lblapellidos = new javax.swing.JLabel();
         lblacceso = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         butsalir = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnmenuhotel = new javax.swing.JButton();
@@ -51,17 +58,6 @@ public class Jmenuprin extends javax.swing.JFrame {
         lblacceso.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         lblacceso.setText("jLabel6");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 109, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 84, Short.MAX_VALUE)
-        );
-
         butsalir.setBackground(new java.awt.Color(153, 153, 153));
         butsalir.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\COMBUGAS\\Complementos\\Images\\salir.gif")); // NOI18N
         butsalir.setText("SALIR");
@@ -79,19 +75,14 @@ public class Jmenuprin extends javax.swing.JFrame {
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblidpersona, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblacceso, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(escritorioLayout.createSequentialGroup()
-                        .addGroup(escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblidpersona, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblacceso, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(escritorioLayout.createSequentialGroup()
-                                .addComponent(lblnombres, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                        .addComponent(jLabel1))
-                    .addGroup(escritorioLayout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(lblnombres, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblapellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(jLabel1))
             .addGroup(escritorioLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(butsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,9 +102,7 @@ public class Jmenuprin extends javax.swing.JFrame {
                             .addComponent(lblapellidos))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblacceso)))
-                .addGap(48, 48, 48)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 368, Short.MAX_VALUE)
                 .addComponent(butsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -231,7 +220,7 @@ public class Jmenuprin extends javax.swing.JFrame {
                 Jmenuprin.lblapellidos.getText(),
                 Jmenuprin.lblacceso.getText());
 
-        if (Jmenuhotel.lblacceso.getText().equals("Administrador")) {
+        if (Jmenuhotel.lblacceso.getText().equals("General")) {
         // Si el usuario es administrador, simplemente se muestra el formulario
         form.setVisible(true);
     } else {
@@ -283,7 +272,6 @@ public class Jmenuprin extends javax.swing.JFrame {
     private javax.swing.JButton butsalir;
     private javax.swing.JPanel escritorio;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     public static javax.swing.JLabel lblacceso;
     public static javax.swing.JLabel lblapellidos;
